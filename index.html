@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formulux – Custom Shampoo</title>
+  <!-- Link to the CSS file -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Formulux Custom Shampoo</h1>
+    <p>Answer a few quick questions, and we'll craft your perfect blend.</p>
+  </header>
+
+  <main>
+    <!-- ====== HAIR QUIZ SECTION ====== -->
+    <section id="hair-quiz-section">
+      <h2>Hair Quiz</h2>
+      <form id="hair-quiz-form">
+        <!-- Name (optional) -->
+        <div class="form-row">
+          <label for="quiz-name">Name (optional):</label>
+          <input type="text" id="quiz-name" name="name" placeholder="Enter your name" />
+        </div>
+
+        <!-- Hair Type -->
+        <div class="form-row">
+          <span>Hair Type:</span>
+          <label><input type="radio" name="hairType" value="Thin" required /> Thin</label>
+          <label><input type="radio" name="hairType" value="Medium" /> Medium</label>
+          <label><input type="radio" name="hairType" value="Thick" /> Thick</label>
+        </div>
+
+        <!-- Texture -->
+        <div class="form-row">
+          <span>Texture:</span>
+          <label><input type="radio" name="texture" value="Straight" required /> Straight</label>
+          <label><input type="radio" name="texture" value="Wavy" /> Wavy</label>
+          <label><input type="radio" name="texture" value="Curly" /> Curly</label>
+          <label><input type="radio" name="texture" value="Coily" /> Coily</label>
+        </div>
+
+        <!-- Scalp Type -->
+        <div class="form-row">
+          <span>Scalp Type:</span>
+          <label><input type="radio" name="scalpType" value="Oily" required /> Oily</label>
+          <label><input type="radio" name="scalpType" value="Dry" /> Dry</label>
+          <label><input type="radio" name="scalpType" value="Balanced" /> Balanced</label>
+          <label><input type="radio" name="scalpType" value="Sensitive" /> Sensitive</label>
+        </div>
+
+        <!-- Hair Goals (multi-select) -->
+        <div class="form-row">
+          <span>Hair Goals (choose all that apply):</span>
+          <label><input type="checkbox" name="goals" value="Anti-dandruff" /> Anti-dandruff</label>
+          <label><input type="checkbox" name="goals" value="Hair fall control" /> Hair fall control</label>
+          <label><input type="checkbox" name="goals" value="Frizz control" /> Frizz control</label>
+          <label><input type="checkbox" name="goals" value="Volume" /> Volume</label>
+          <label><input type="checkbox" name="goals" value="Shine" /> Shine</label>
+          <label><input type="checkbox" name="goals" value="Repair & Strengthen" /> Repair & Strengthen</label>
+        </div>
+
+        <!-- Quiz Submit Button -->
+        <div class="form-row">
+          <button type="submit">See My Custom Formula</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- ====== PRODUCT DISPLAY SECTION (HIDDEN AT FIRST) ====== -->
+    <section id="product-section" class="hidden">
+      <div class="product-container">
+        <!-- 1) Left: Shampoo Bottle Image Placeholder -->
+        <div class="image-area">
+          <!-- Replace with your actual bottle image if you have one -->
+          <img
+            src="https://via.placeholder.com/200x400?text=Shampoo+Bottle"
+            alt="Shampoo Bottle"
+          />
+        </div>
+
+        <!-- 2) Right: Dynamic Text, Ingredients, and Pricing -->
+        <div class="details-area">
+          <!-- Headline / Intro Copy -->
+          <h2 id="dynamic-headline">Your Custom Shampoo</h2>
+          <p id="dynamic-subtext">
+            Based on your profile, we’ve created a formula specifically for your
+            <span id="headline-hair-type"></span> hair with a
+            <span id="headline-scalp-type"></span> scalp. Your formula focuses on
+            <span id="headline-goals"></span>.
+          </p>
+
+          <!-- Key Ingredients (bullet list) -->
+          <div class="ingredients-block">
+            <h3>Key Ingredients:</h3>
+            <ul id="ingredient-list">
+              <!-- JS will inject four <li> items here -->
+            </ul>
+          </div>
+
+          <!-- Details Table (Size options + Personalization + Total Price) -->
+          <div class="details-table">
+            <div class="row">
+              <span class="label">Size:</span>
+              <div class="value">
+                <label>
+                  <input type="radio" name="sizeOption" value="Sample" data-price="300" />
+                  Sample (30 ml) — NPR 300
+                </label><br />
+                <label>
+                  <input type="radio" name="sizeOption" value="Small" data-price="800" />
+                  Small (100 ml) — NPR 800
+                </label><br />
+                <label>
+                  <input type="radio" name="sizeOption" value="Medium" data-price="1200" />
+                  Medium (200 ml) — NPR 1,200
+                </label><br />
+                <label>
+                  <input type="radio" name="sizeOption" value="Large" data-price="1500" />
+                  Large (250 ml) — NPR 1,500
+                </label>
+              </div>
+            </div>
+
+            <div class="row">
+              <span class="label">Personalization:</span>
+              <span class="value" id="personalization-name"></span>
+            </div>
+
+            <div class="row">
+              <span class="label">Total Price (NPR):</span>
+              <span class="value" id="total-price">—</span>
+            </div>
+          </div>
+
+          <!-- Add to Cart Button -->
+          <button id="add-to-cart-btn">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Formulux. All rights reserved.</p>
+  </footer>
+
+  <!-- Link to the JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>

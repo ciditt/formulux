@@ -1,0 +1,200 @@
+/* -------------------------
+   GLOBAL STYLES
+------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: #faf7f2; /* cream */
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Basic page wrapper */
+header,
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #ffffff;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1rem;
+  color: #666;
+}
+
+footer p {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+/* -------------------------
+   MAIN / SECTIONS
+------------------------- */
+main {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Hide sections by default when they have class 'hidden' */
+.hidden {
+  display: none;
+}
+
+/* ===== Hair Quiz Section ===== */
+#hair-quiz-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#hair-quiz-form .form-row {
+  margin-bottom: 1rem;
+}
+
+#hair-quiz-form label {
+  margin-right: 1rem;
+  font-size: 0.95rem;
+}
+
+#hair-quiz-form input[type="text"] {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 300px;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#hair-quiz-form button {
+  background-color: #7a5c43; /* brown */
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#hair-quiz-form button:hover {
+  background-color: #6b4e39;
+}
+
+/* ===== Product Section ===== */
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* Left Image Area */
+.image-area {
+  flex: 1 1 200px;
+  text-align: center;
+}
+
+.image-area img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Right Details Area */
+.details-area {
+  flex: 2 1 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.details-area h2 {
+  font-family: serif;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.details-area p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ingredients-block h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+#ingredient-list {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#ingredient-list li {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Details Table */
+.details-table {
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.details-table .row {
+  display: flex;
+  margin-bottom: 0.75rem;
+}
+
+.details-table .label {
+  width: 35%;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.details-table .value {
+  width: 65%;
+  font-size: 0.95rem;
+}
+
+.details-table input[type="radio"] {
+  margin-right: 0.4rem;
+}
+
+/* Add to Cart Button */
+#add-to-cart-btn {
+  background-color: #7a5c43;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+#add-to-cart-btn:hover {
+  background-color: #6b4e39;
+}
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+  .product-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .details-area {
+    width: 100%;
+  }
+}
